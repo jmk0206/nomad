@@ -5,7 +5,7 @@ const toDoList = document.getElementById("todo-list");
 
 const TODOS_KEY = "todos";
 
-const toDos = [];
+let toDos = [];
 
 function saveToDos() {
 	localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
@@ -15,13 +15,15 @@ function deleteToDo(event) {
 	// parentElemnt를 통해 현재 누른 버튼의 부모를 선택하는 것이기 때문에
 	// button을 누른 li가 삭제가 된다.
 	const li = event.target.parentElement;
+	console.log(li.id);
 	li.remove();
 }
 
 function paintToDo(newTodo) {
 	const li = document.createElement("li");
+	li.id = newTodo.id;
 	const span = document.createElement("span");
-	span.innerText = newTodo;
+	span.innerText = newTodo.text;
 	const button = document.createElement("button");
 	button.innerText = "❌" // 이모티콘 : https://getemoji.com/
 	button.addEventListener("click", deleteToDo);
@@ -37,8 +39,13 @@ function handleToDoSubmit(event) {
 	// 아래의 .value를 통해 비워주게 된다.
 	const newTodo = toDoInput.value;
 	toDoInput.value = "";
-	toDos.push(newTodo);
-	paintToDo(newTodo);
+	const newTodoObj = {
+		text: newTodo,
+		id: Date.now(),
+	};
+	
+	toDos.push(newTodoObj);
+	paintToDo(newTodoObj);
 	saveToDos();
 }
 
@@ -55,6 +62,6 @@ const savedToDos = localStorage.getItem(TODOS_KEY);
 
 if(savedToDos !== null) {
 	const parsedToDos = JSON.parse(savedToDos);
-	console.log(parsedToDos);
-	parsedToDos.forEach((item) => console.log("this is the turn of ", item));
+	toDos = parsedToDos;
+	parsedToDos.forEach(paintToDo);
 }
