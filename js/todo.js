@@ -15,8 +15,9 @@ function deleteToDo(event) {
 	// parentElemnt를 통해 현재 누른 버튼의 부모를 선택하는 것이기 때문에
 	// button을 누른 li가 삭제가 된다.
 	const li = event.target.parentElement;
-	console.log(li.id);
 	li.remove();
+	toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id));
+	saveToDos();
 }
 
 function paintToDo(newTodo) {
