@@ -28,46 +28,56 @@ a {
     text-decoration: 0;
 }
 
-.hidden {
+#wrap {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+}
+
+#wrap .hidden {
 	display: none;
 }
 
-#wrap {
-	position: relative;
-	width: 100vw;
-	height: 100vh;
+img, #clock, #login-form {
+	position: absolute;
 }
 
-img {
-	position: absolute;
+img{
 	top: 0;
 	left: 0;
 	z-index: -1;
-	width: 100vw;
-	height: 100vh;
-}
-
-#clock, #login-form {
-	position: absolute;
 	width: 100%;
-	height: 100vw;
-	height: 100vh;
+	height: 100%;
 }
 
 #clock {
-	top: -50px;
-	color: rgb(0, 255, 149);
+	top: 400px;
+	width: 100%;
 	display: flex;
 	justify-content: center;
-	align-items: center;
-	font-size: 130px;
+	font-size: 80px;
+	color: #fff;
 }
 
 #login-form {
-	top: 100px;
-	left: 0;
-	z-index: 10;
+	width: 100%;
+	top: 470px;
 	display: flex;
 	justify-content: center;
-	align-items: center;
+}
+
+#login-form input {
+	font-size: 32px;
+	outline: none;
+	border: none;
+	text-align: center;
+	background: transparent;
+	color: #fff;
+	border-bottom: 1px solid #fff;
+	padding: 20px 10px;
+}
+
+#login-form input::-webkit-input-placeholder {
+	color: #fff;
 }
