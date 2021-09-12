@@ -39,7 +39,7 @@ a {
 	display: none;
 }
 
-img, #clock, #login-form {
+img, #clock, #login-form, .userId, #weather, .quoteBox, .todoBox {
 	position: absolute;
 }
 
@@ -60,14 +60,14 @@ img{
 	color: #fff;
 }
 
-#login-form {
+#login-form, .userId {
 	width: 100%;
 	top: 470px;
 	display: flex;
 	justify-content: center;
 }
 
-#login-form input {
+#login-form input, #greeting {
 	font-size: 32px;
 	outline: none;
 	border: none;
@@ -80,4 +80,74 @@ img{
 
 #login-form input::-webkit-input-placeholder {
 	color: #fff;
+}
+
+#greeting {
+	line-height: 1.2em;
+}
+
+.todoBox {
+	top: 350px;
+	right: 50px;
+}
+
+#todo-form input {
+	border: none;
+	outline: none;
+	background: transparent;
+	color: #fff;
+	font-size: 20px;
+	line-height: 1.2em;
+	border-bottom: 1px solid #fff;
+	padding: 10px;
+}
+
+#todo-form input::-webkit-input-placeholder {
+	color: #fff;
+}
+
+#todo-list {
+	color: #fff;
+	padding: 10px;
+	font-size: 16px;
+	line-height: 1.2em;
+}
+
+#todo-list li {
+	padding: 10px 10px;
+	border-bottom: 1px solid #fff;
+}
+
+#todo-list li span {
+	margin-right: 20px;
+}
+
+#todo-list li button {
+	border: none;
+	background: transparent;
+	cursor: pointer;
+}
+
+.quoteBox {
+	bottom: 150px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+#quote {
+	line-height: 2.4em;
+	border-bottom: 1px solid #fff;
+	color: #fff;
+	font-size: 25px;
+	font-weight: 700;
+	padding: 5px 20px;
+}
+
+#weather {
+	top: 30px;
+	right: 50px;
+	color: #fff;
+	font-size: 23px;
+	font-weight: 700;
 }
