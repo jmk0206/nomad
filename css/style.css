@@ -69,7 +69,7 @@ img{
 
 #login-form, .userId {
 	width: 100%;
-	top: 470px;
+	top: 500px;
 	display: flex;
 	justify-content: center;
 }
