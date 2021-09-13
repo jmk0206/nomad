@@ -39,7 +39,7 @@ a {
 	display: none;
 }
 
-img, #clock, #login-form, .userId, #weather, .quoteBox, .todoBox {
+img, .clockBox, #login-form, .userId, #weather, .quoteBox, .todoBox {
 	position: absolute;
 }
 
@@ -51,13 +51,20 @@ img{
 	height: 100%;
 }
 
-#clock {
-	top: 400px;
+.clockBox {
+	top: 340px;
 	width: 100%;
 	display: flex;
 	justify-content: center;
+	align-items: center;
+}
+
+#clock {
 	font-size: 80px;
+	line-height: 1.2em;
 	color: #fff;
+	padding: 10px 10px 15px 10px;
+	background: rgba(34, 34, 34, 0.6);
 }
 
 #login-form, .userId {
@@ -74,8 +81,8 @@ img{
 	text-align: center;
 	background: transparent;
 	color: #fff;
-	border-bottom: 1px solid #fff;
 	padding: 20px 10px;
+	background: rgba(34, 34, 34, 0.6);
 }
 
 #login-form input::-webkit-input-placeholder {
@@ -89,17 +96,20 @@ img{
 .todoBox {
 	top: 350px;
 	right: 50px;
+	width: 290px;
 }
 
 #todo-form input {
+	width: 100%;
 	border: none;
+	border-bottom: 1px solid #fff;
 	outline: none;
 	background: transparent;
 	color: #fff;
 	font-size: 20px;
 	line-height: 1.2em;
-	border-bottom: 1px solid #fff;
 	padding: 10px;
+	background: rgba(34, 34, 34, 0.6);
 }
 
 #todo-form input::-webkit-input-placeholder {
@@ -107,15 +117,16 @@ img{
 }
 
 #todo-list {
+	width: 100%;
 	color: #fff;
-	padding: 10px;
 	font-size: 16px;
 	line-height: 1.2em;
 }
 
 #todo-list li {
+	width: 100%;
 	padding: 10px 10px;
-	border-bottom: 1px solid #fff;
+	background: rgba(34, 34, 34, 0.6);
 }
 
 #todo-list li span {
@@ -137,17 +148,20 @@ img{
 
 #quote {
 	line-height: 2.4em;
-	border-bottom: 1px solid #fff;
 	color: #fff;
 	font-size: 25px;
 	font-weight: 700;
 	padding: 5px 20px;
+	background: rgba(34, 34, 34, 0.8);
 }
 
 #weather {
 	top: 30px;
 	right: 50px;
+	padding: 15px 20px;
 	color: #fff;
 	font-size: 23px;
 	font-weight: 700;
+	border-radius: 25px;
+	background: rgba(34, 34, 34, 0.8);
 }
